@@ -1,0 +1,5 @@
+apt-mirror:
+  image: 'yannhowe/aptmirror-ubuntu1804'
+  restart: always
+  volumes:
+    - './data:/mnt/mirror/debian'
