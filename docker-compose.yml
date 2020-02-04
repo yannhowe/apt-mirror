@@ -1,5 +1,15 @@
-apt-mirror:
-  image: 'yannhowe/aptmirror-ubuntu1804'
-  restart: always
-  volumes:
-    - './data:/mnt/mirror/debian'
+version: '2.3'
+
+services:
+  apt-mirror:
+    image: 'yannhowe/aptmirror-ubuntu1804'
+    volumes:
+      - './data:/mnt/mirror/debian'
+  nginx-apt-mirror:
+    image: 'nginx:1.17'
+    restart: always
+    ports: 
+      - '8088:80'
+    volumes:
+      - './data/mirror:/usr/share/nginx/html:ro'
+      - './nginx:/etc/nginx/conf.d'
