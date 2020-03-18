@@ -66,6 +66,8 @@ deb http://security.ubuntu.com/ubuntu bionic-security multiverse
 
 deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 
 
+deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
+
 # Cleanup old packages
 clean http://us.archive.ubuntu.com/ubuntu
 clean http://security.ubuntu.com/ubuntu
